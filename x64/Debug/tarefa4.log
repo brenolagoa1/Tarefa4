@@ -1,0 +1,8 @@
+﻿  Objeto.cpp
+C:\Users\lagoa\source\repos\tarefa4\Objeto.cpp(38,18): warning C4101: 'separator': variável local não referenciada
+  Ray.cpp
+  Triangulo.cpp
+  matvec.cpp
+  tarefa4.cpp
+  Gerando Código...
+  tarefa4.vcxproj -> C:\Users\lagoa\source\repos\tarefa4\x64\Debug\tarefa4.exe

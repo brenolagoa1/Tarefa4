@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tarefa4: Código-Fonte de tarefa4.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Tarefa4<span id="projectnumber">&#160;v1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">tarefa4.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="tarefa4_8cpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="tarefa4_8cpp.html#ab6197b29f021d0b91c35ef6b03a2694f">    1</a></span><span class="preprocessor">#define cimg_display 0</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_c_img_8h.html">CImg.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="matvec_8h.html">matvec.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_ray_8h.html">Ray.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_objeto_8h.html">objeto.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_triangulo_8h.html">Triangulo.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacecimg__library.html">cimg_library</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="tarefa4_8cpp.html#a9833c87e271a39bccee01aef76168177">   24</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="tarefa4_8cpp.html#a9833c87e271a39bccee01aef76168177">hit_triangle</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; v0, <span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; v1, <span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; v2, <span class="keyword">const</span> <a class="code hl_class" href="class_ray.html">Ray</a>&amp; r) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_class" href="classvec3.html">vec3</a> e1 = v1 - v0;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_class" href="classvec3.html">vec3</a> e2 = v2 - v0;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_class" href="classvec3.html">vec3</a> h = <a class="code hl_function" href="matvec_8cpp.html#ab5889dcdb0ad1241997e5f127e5c8809">cross</a>(r.<a class="code hl_function" href="class_ray.html#a9f84262853e9a65340154c1ddb010538">direction</a>(), e2);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">double</span> a = <a class="code hl_function" href="matvec_8cpp.html#abc3b6874dbb4b1cde526f10bc28b7486">dot</a>(e1, h);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span> (a &gt; -1e-6 &amp;&amp; a &lt; 1e-6)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">double</span> f = 1.0 / a;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_class" href="classvec3.html">vec3</a> s = r.<a class="code hl_function" href="class_ray.html#a3fe23f5cb17e2112ff47af6e76c740f8">origin</a>() - v0;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">double</span> u = f * <a class="code hl_function" href="matvec_8cpp.html#abc3b6874dbb4b1cde526f10bc28b7486">dot</a>(s, h);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (u &lt; 0.0 || u &gt; 1.0)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_class" href="classvec3.html">vec3</a> q = <a class="code hl_function" href="matvec_8cpp.html#ab5889dcdb0ad1241997e5f127e5c8809">cross</a>(s, e1);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">double</span> v = f * <a class="code hl_function" href="matvec_8cpp.html#abc3b6874dbb4b1cde526f10bc28b7486">dot</a>(r.<a class="code hl_function" href="class_ray.html#a9f84262853e9a65340154c1ddb010538">direction</a>(), q);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (v &lt; 0.0 || u + v &gt; 1.0)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">double</span> t = f * <a class="code hl_function" href="matvec_8cpp.html#abc3b6874dbb4b1cde526f10bc28b7486">dot</a>(e2, q);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">return</span> t &gt; 1e-6;  <span class="comment">// Considerar apenas interseções à frente do raio</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="tarefa4_8cpp.html#a94056ab8ee6aa9c7afffe39a5f279f0d">   59</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="tarefa4_8cpp.html#a94056ab8ee6aa9c7afffe39a5f279f0d">hit_sphere</a>(<span class="keyword">const</span> <a class="code hl_class" href="classvec3.html">vec3</a>&amp; center, <span class="keywordtype">double</span> radius, <span class="keyword">const</span> <a class="code hl_class" href="class_ray.html">Ray</a>&amp; r) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_class" href="classvec3.html">vec3</a> oc = r.<a class="code hl_function" href="class_ray.html#a3fe23f5cb17e2112ff47af6e76c740f8">origin</a>() - center;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">auto</span> a = <a class="code hl_function" href="matvec_8cpp.html#abc3b6874dbb4b1cde526f10bc28b7486">dot</a>(r.<a class="code hl_function" href="class_ray.html#a9f84262853e9a65340154c1ddb010538">direction</a>(), r.<a class="code hl_function" href="class_ray.html#a9f84262853e9a65340154c1ddb010538">direction</a>());</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">auto</span> b = 2.0 * <a class="code hl_function" href="matvec_8cpp.html#abc3b6874dbb4b1cde526f10bc28b7486">dot</a>(oc, r.<a class="code hl_function" href="class_ray.html#a9f84262853e9a65340154c1ddb010538">direction</a>());</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">auto</span> c = <a class="code hl_function" href="matvec_8cpp.html#abc3b6874dbb4b1cde526f10bc28b7486">dot</a>(oc, oc) - radius * radius;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">auto</span> discriminant = b * b - 4 * a * c;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> (discriminant &gt;= 0);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="tarefa4_8cpp.html#a6dc4bf251c7aa261e767c5c64b178692">   74</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="tarefa4_8cpp.html#a6dc4bf251c7aa261e767c5c64b178692">salvarImagem</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcimg__library_1_1_c_img.html">CImg&lt;unsigned char&gt;</a>&amp; imagem, <span class="keyword">const</span> std::string&amp; nomeArquivo) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    imagem.<a class="code hl_function" href="structcimg__library_1_1_c_img.html#a78a2e382dd71914502e9d69d0764133d">save_png</a>(nomeArquivo.c_str());</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="tarefa4_8cpp.html#a39656adfcd416b5977fd29c3ed2f40c4">   84</a></span><a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="tarefa4_8cpp.html#a39656adfcd416b5977fd29c3ed2f40c4">ray_color_sphere</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_ray.html">Ray</a>&amp; r) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="tarefa4_8cpp.html#a94056ab8ee6aa9c7afffe39a5f279f0d">hit_sphere</a>(<a class="code hl_class" href="classvec3.html">vec3</a>(0, 0, -1), 0.5, r))</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classvec3.html">vec3</a>(1, 0, 0);  <span class="comment">// Cor da esfera</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_class" href="classvec3.html">vec3</a> unit_direction = <a class="code hl_function" href="matvec_8cpp.html#a7138f7ab204cf8d71168aadc80ac2561">unit_vector</a>(r.<a class="code hl_function" href="class_ray.html#a9f84262853e9a65340154c1ddb010538">direction</a>());</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">auto</span> a = 0.5 * (unit_direction.<a class="code hl_variable" href="classvec3.html#a9c3ca9a994470ce9bc9fee5963439fba">y</a> + 1.0);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">return</span> (1.0 - a) * <a class="code hl_class" href="classvec3.html">vec3</a>(1.0, 1.0, 1.0) + a * <a class="code hl_class" href="classvec3.html">vec3</a>(0.5, 0.7, 1.0);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="tarefa4_8cpp.html#a99b255eb2daf1357afc84727972d09dc">  101</a></span><a class="code hl_class" href="classvec3.html">vec3</a> <a class="code hl_function" href="tarefa4_8cpp.html#a99b255eb2daf1357afc84727972d09dc">ray_color_triangle</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_triangulo.html">Triangulo</a>&amp; triangulo, <span class="keyword">const</span> <a class="code hl_class" href="class_ray.html">Ray</a>&amp; r, <span class="keywordtype">bool</span>* hit_detected) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_class" href="classvec3.html">vec3</a> v0, v1, v2;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    std::tie(v0, v1, v2) = triangulo.<a class="code hl_function" href="class_triangulo.html#a6ee603f8b5cd0d0e7f5988f868aafc07">getVertices</a>();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="tarefa4_8cpp.html#a9833c87e271a39bccee01aef76168177">hit_triangle</a>(v0, v1, v2, r)) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">if</span> (hit_detected != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            *hit_detected = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classvec3.html">vec3</a>(0, 1, 0);  <span class="comment">// Cor do triângulo</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">if</span> (hit_detected != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        *hit_detected = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_class" href="classvec3.html">vec3</a> unit_direction = <a class="code hl_function" href="matvec_8cpp.html#a7138f7ab204cf8d71168aadc80ac2561">unit_vector</a>(r.<a class="code hl_function" href="class_ray.html#a9f84262853e9a65340154c1ddb010538">direction</a>());</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">auto</span> a = 0.5 * (unit_direction.<a class="code hl_variable" href="classvec3.html#a9c3ca9a994470ce9bc9fee5963439fba">y</a> + 1.0);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">return</span> (1.0 - a) * <a class="code hl_class" href="classvec3.html">vec3</a>(1.0, 1.0, 1.0) + a * <a class="code hl_class" href="classvec3.html">vec3</a>(0.5, 0.7, 1.0);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="foldopen" id="foldopen00129" data-start="{" data-end="}">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="tarefa4_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">  129</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="tarefa4_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="comment">// Image</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keyword">auto</span> aspect_ratio = 16.0 / 9.0;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordtype">int</span> image_width = 800;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordtype">int</span> image_height = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(image_width / aspect_ratio);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="comment">// Camera</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keyword">auto</span> focal_length = 1.0;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keyword">auto</span> viewport_height = 2.0;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keyword">auto</span> viewport_width = viewport_height * (<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(image_width) / image_height);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keyword">auto</span> camera_center = <a class="code hl_class" href="classvec3.html">vec3</a>(0, 0, 0);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">auto</span> viewport_u = <a class="code hl_class" href="classvec3.html">vec3</a>(viewport_width, 0, 0);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keyword">auto</span> viewport_v = <a class="code hl_class" href="classvec3.html">vec3</a>(0, -viewport_height, 0);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keyword">auto</span> pixel_delta_u = viewport_u / image_width;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keyword">auto</span> pixel_delta_v = viewport_v / image_height; </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keyword">auto</span> viewport_upper_left = camera_center - <a class="code hl_class" href="classvec3.html">vec3</a>(0, 0, focal_length) - viewport_u / 2 - viewport_v / 2;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keyword">auto</span> pixel00_loc = viewport_upper_left + 0.5 * (pixel_delta_u + pixel_delta_v);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="comment">// Definir o triângulo a partir de um arquivo .obj</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <a class="code hl_class" href="class_objeto.html">Objeto</a> meuObjeto(<span class="stringliteral">&quot;C:\\Users\\lagoa\\source\\repos\\tarefa4\\seahorse.obj&quot;</span>);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keyword">const</span> std::vector&lt;Triangulo&gt;&amp; triangulosLidos = meuObjeto.getTriangulos();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="comment">// Render</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <a class="code hl_struct" href="structcimg__library_1_1_c_img.html">CImg&lt;unsigned char&gt;</a> imagem_triangulo_lido(image_width, image_height, 1, 3, 255);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_struct" href="structcimg__library_1_1_c_img.html">CImg&lt;unsigned char&gt;</a> imagem_esfera(image_width, image_height, 1, 3, 0);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <a class="code hl_struct" href="structcimg__library_1_1_c_img.html">CImg&lt;unsigned char&gt;</a> imagem_triangulo(image_width, image_height, 1, 3, 0);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; image_height; ++j) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="comment">//std::clog &lt;&lt; &quot;\rScanlines remaining: &quot; &lt;&lt; (image_height - j) &lt;&lt; &#39; &#39; ;</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; image_width; ++i) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            <span class="keyword">auto</span> pixel_center = pixel00_loc + (i * pixel_delta_u) + (j * pixel_delta_v);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keyword">auto</span> ray_direction = pixel_center - camera_center;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            <a class="code hl_class" href="class_ray.html">Ray</a> r(camera_center, ray_direction);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="comment">// Esfera</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <a class="code hl_class" href="classvec3.html">vec3</a> pixel_color_esfera = <a class="code hl_function" href="tarefa4_8cpp.html#a39656adfcd416b5977fd29c3ed2f40c4">ray_color_sphere</a>(r);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> cor_esfera[3] = { <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(255.999 * pixel_color_esfera.<a class="code hl_variable" href="classvec3.html#ae25ebf32c019afc408f51f6117558365">x</a>),</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                                           <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(255.999 * pixel_color_esfera.<a class="code hl_variable" href="classvec3.html#a9c3ca9a994470ce9bc9fee5963439fba">y</a>),</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                                           <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(255.999 * pixel_color_esfera.<a class="code hl_variable" href="classvec3.html#a2b02670cfe437ee01416916bac917584">z</a>) };</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            imagem_esfera.<a class="code hl_function" href="structcimg__library_1_1_c_img.html#ab85a8e52d50bec4e92e13a0b60f5ea78">draw_point</a>(i, j, 0, cor_esfera);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            <span class="comment">//triangulo</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            <a class="code hl_class" href="class_triangulo.html">Triangulo</a> trianguloTeste = <a class="code hl_class" href="class_triangulo.html">Triangulo</a>(<a class="code hl_class" href="classvec3.html">vec3</a>(-1, -0.5, -1), <a class="code hl_class" href="classvec3.html">vec3</a>(1, -0.5, -1), <a class="code hl_class" href="classvec3.html">vec3</a>(0, 0.5, -1));</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            <span class="keywordtype">bool</span> hit_detected_triangulo = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            <a class="code hl_class" href="classvec3.html">vec3</a> pixel_color_triangulo = <a class="code hl_function" href="tarefa4_8cpp.html#a99b255eb2daf1357afc84727972d09dc">ray_color_triangle</a>(trianguloTeste, r, &amp;hit_detected_triangulo);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <span class="keywordflow">if</span> (hit_detected_triangulo) {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                <span class="comment">// Faça algo se houve um hit no triângulo de teste</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                <span class="comment">//std::cout &lt;&lt; &quot;Hit detected in the test triangle!\n&quot;;</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> cor_triangulo[3] = { <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(255.999 * pixel_color_triangulo.<a class="code hl_variable" href="classvec3.html#ae25ebf32c019afc408f51f6117558365">x</a>),</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                                                <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(255.999 * pixel_color_triangulo.<a class="code hl_variable" href="classvec3.html#a9c3ca9a994470ce9bc9fee5963439fba">y</a>),</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                                                <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(255.999 * pixel_color_triangulo.<a class="code hl_variable" href="classvec3.html#a2b02670cfe437ee01416916bac917584">z</a>) };</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            imagem_triangulo.<a class="code hl_function" href="structcimg__library_1_1_c_img.html#ab85a8e52d50bec4e92e13a0b60f5ea78">draw_point</a>(i, j, 0, cor_triangulo);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            <span class="comment">// obj Lido</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            <span class="keywordtype">bool</span> hit_detected_lido = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            <a class="code hl_class" href="classvec3.html">vec3</a> cor_final_lido = <a class="code hl_class" href="classvec3.html">vec3</a>(1.0, 1.0, 1.0);  <span class="comment">// Cor de fundo padrão</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; trianguloLido : triangulosLidos) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                <a class="code hl_class" href="classvec3.html">vec3</a> pixel_color_triangulo_lido = <a class="code hl_function" href="tarefa4_8cpp.html#a99b255eb2daf1357afc84727972d09dc">ray_color_triangle</a>(trianguloLido, r, &amp;hit_detected_lido);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                <span class="keywordflow">if</span> (hit_detected_lido) {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                    <span class="comment">// Usar a cor do triângulo quando houver hit</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                    cor_final_lido = pixel_color_triangulo_lido;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                    </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                    <span class="comment">//std::cout &lt;&lt; &quot;Hit detected in a loaded triangle!\n&quot;;</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                    <span class="comment">// Não é necessário continuar verificando outros triângulos após o primeiro hit</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> cor_triangulo_lido[3] = { <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(255.999 * cor_final_lido.<a class="code hl_variable" href="classvec3.html#ae25ebf32c019afc408f51f6117558365">x</a>),</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                                                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(255.999 * cor_final_lido.<a class="code hl_variable" href="classvec3.html#a9c3ca9a994470ce9bc9fee5963439fba">y</a>),</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                                                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(255.999 * cor_final_lido.<a class="code hl_variable" href="classvec3.html#a2b02670cfe437ee01416916bac917584">z</a>) };</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            imagem_triangulo_lido.<a class="code hl_function" href="structcimg__library_1_1_c_img.html#ab85a8e52d50bec4e92e13a0b60f5ea78">draw_point</a>(i, j, 0, cor_triangulo_lido);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        }</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    }</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    std::clog &lt;&lt; <span class="stringliteral">&quot;\rDone.\n&quot;</span>;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="comment">// Salvar as imagens    </span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <a class="code hl_function" href="tarefa4_8cpp.html#a6dc4bf251c7aa261e767c5c64b178692">salvarImagem</a>(imagem_esfera, <span class="stringliteral">&quot;esfera.png&quot;</span>);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <a class="code hl_function" href="tarefa4_8cpp.html#a6dc4bf251c7aa261e767c5c64b178692">salvarImagem</a>(imagem_triangulo, <span class="stringliteral">&quot;triangulo.png&quot;</span>);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <a class="code hl_function" href="tarefa4_8cpp.html#a6dc4bf251c7aa261e767c5c64b178692">salvarImagem</a>(imagem_triangulo_lido, <span class="stringliteral">&quot;cavaloMarinho.png&quot;</span>);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>}</div>
+</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="ttc" id="a_c_img_8h_html"><div class="ttname"><a href="_c_img_8h.html">CImg.h</a></div></div>
+<div class="ttc" id="a_objeto_8h_html"><div class="ttname"><a href="_objeto_8h.html">Objeto.h</a></div></div>
+<div class="ttc" id="a_ray_8h_html"><div class="ttname"><a href="_ray_8h.html">Ray.h</a></div></div>
+<div class="ttc" id="a_triangulo_8h_html"><div class="ttname"><a href="_triangulo_8h.html">Triangulo.h</a></div></div>
+<div class="ttc" id="aclass_objeto_html"><div class="ttname"><a href="class_objeto.html">Objeto</a></div><div class="ttdoc">Classe que representa um objeto tridimensional carregado a partir de um arquivo.</div><div class="ttdef"><b>Definição</b> <a href="_objeto_8h_source.html#l00012">Objeto.h:12</a></div></div>
+<div class="ttc" id="aclass_ray_html"><div class="ttname"><a href="class_ray.html">Ray</a></div><div class="ttdoc">A classe Ray representa um raio no espa�o tridimensional.</div><div class="ttdef"><b>Definição</b> <a href="_ray_8h_source.html#l00011">Ray.h:11</a></div></div>
+<div class="ttc" id="aclass_ray_html_a3fe23f5cb17e2112ff47af6e76c740f8"><div class="ttname"><a href="class_ray.html#a3fe23f5cb17e2112ff47af6e76c740f8">Ray::origin</a></div><div class="ttdeci">vec3 origin() const</div><div class="ttdoc">Fun��o de acesso para obter a origem do raio.</div><div class="ttdef"><b>Definição</b> <a href="_ray_8cpp_source.html#l00020">Ray.cpp:20</a></div></div>
+<div class="ttc" id="aclass_ray_html_a9f84262853e9a65340154c1ddb010538"><div class="ttname"><a href="class_ray.html#a9f84262853e9a65340154c1ddb010538">Ray::direction</a></div><div class="ttdeci">vec3 direction() const</div><div class="ttdoc">Fun��o de acesso para obter a dire��o do raio.</div><div class="ttdef"><b>Definição</b> <a href="_ray_8cpp_source.html#l00028">Ray.cpp:28</a></div></div>
+<div class="ttc" id="aclass_triangulo_html"><div class="ttname"><a href="class_triangulo.html">Triangulo</a></div><div class="ttdoc">Classe que representa um tri�ngulo no espa�o tridimensional.</div><div class="ttdef"><b>Definição</b> <a href="_triangulo_8h_source.html#l00008">Triangulo.h:8</a></div></div>
+<div class="ttc" id="aclass_triangulo_html_a6ee603f8b5cd0d0e7f5988f868aafc07"><div class="ttname"><a href="class_triangulo.html#a6ee603f8b5cd0d0e7f5988f868aafc07">Triangulo::getVertices</a></div><div class="ttdeci">std::tuple&lt; vec3, vec3, vec3 &gt; getVertices() const</div><div class="ttdoc">Obt�m os v�rtices do tri�ngulo.</div><div class="ttdef"><b>Definição</b> <a href="_triangulo_8cpp_source.html#l00014">Triangulo.cpp:14</a></div></div>
+<div class="ttc" id="aclassvec3_html"><div class="ttname"><a href="classvec3.html">vec3</a></div><div class="ttdoc">Classe que representa um vetor 3D.</div><div class="ttdef"><b>Definição</b> <a href="matvec_8h_source.html#l00026">matvec.h:26</a></div></div>
+<div class="ttc" id="aclassvec3_html_a2b02670cfe437ee01416916bac917584"><div class="ttname"><a href="classvec3.html#a2b02670cfe437ee01416916bac917584">vec3::z</a></div><div class="ttdeci">double z</div><div class="ttdef"><b>Definição</b> <a href="matvec_8h_source.html#l00028">matvec.h:28</a></div></div>
+<div class="ttc" id="aclassvec3_html_a9c3ca9a994470ce9bc9fee5963439fba"><div class="ttname"><a href="classvec3.html#a9c3ca9a994470ce9bc9fee5963439fba">vec3::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definição</b> <a href="matvec_8h_source.html#l00028">matvec.h:28</a></div></div>
+<div class="ttc" id="aclassvec3_html_ae25ebf32c019afc408f51f6117558365"><div class="ttname"><a href="classvec3.html#ae25ebf32c019afc408f51f6117558365">vec3::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definição</b> <a href="matvec_8h_source.html#l00028">matvec.h:28</a></div></div>
+<div class="ttc" id="amatvec_8cpp_html_a7138f7ab204cf8d71168aadc80ac2561"><div class="ttname"><a href="matvec_8cpp.html#a7138f7ab204cf8d71168aadc80ac2561">unit_vector</a></div><div class="ttdeci">vec3 unit_vector(const vec3 &amp;v)</div><div class="ttdoc">Calcula o vetor normalizado (unit�rio) de um vetor 3D.</div><div class="ttdef"><b>Definição</b> <a href="matvec_8cpp_source.html#l00112">matvec.cpp:112</a></div></div>
+<div class="ttc" id="amatvec_8cpp_html_ab5889dcdb0ad1241997e5f127e5c8809"><div class="ttname"><a href="matvec_8cpp.html#ab5889dcdb0ad1241997e5f127e5c8809">cross</a></div><div class="ttdeci">vec3 cross(const vec3 &amp;v1, const vec3 &amp;v2)</div><div class="ttdoc">Calcula o produto vetorial de dois vetores 3D.</div><div class="ttdef"><b>Definição</b> <a href="matvec_8cpp_source.html#l00117">matvec.cpp:117</a></div></div>
+<div class="ttc" id="amatvec_8cpp_html_abc3b6874dbb4b1cde526f10bc28b7486"><div class="ttname"><a href="matvec_8cpp.html#abc3b6874dbb4b1cde526f10bc28b7486">dot</a></div><div class="ttdeci">double dot(const vec3 &amp;v1, const vec3 &amp;v2)</div><div class="ttdoc">Calcula o produto escalar de dois vetores 3D.</div><div class="ttdef"><b>Definição</b> <a href="matvec_8cpp_source.html#l00126">matvec.cpp:126</a></div></div>
+<div class="ttc" id="amatvec_8h_html"><div class="ttname"><a href="matvec_8h.html">matvec.h</a></div><div class="ttdoc">Cont�m as defini��es de classes para vetores e matrizes 2D, 3D e 4D.</div></div>
+<div class="ttc" id="anamespacecimg__library_html"><div class="ttname"><a href="namespacecimg__library.html">cimg_library</a></div><div class="ttdoc">Contains all classes and functions of the \CImg library.</div><div class="ttdef"><b>Definição</b> <a href="_c_img_8h_source.html#l02308">CImg.h:2308</a></div></div>
+<div class="ttc" id="astructcimg__library_1_1_c_img_html"><div class="ttname"><a href="structcimg__library_1_1_c_img.html">cimg_library::CImg</a></div><div class="ttdoc">Class representing an image (up to 4 dimensions wide), each pixel being of type T.</div><div class="ttdef"><b>Definição</b> <a href="_c_img_8h_source.html#l11795">CImg.h:11795</a></div></div>
+<div class="ttc" id="astructcimg__library_1_1_c_img_html_a78a2e382dd71914502e9d69d0764133d"><div class="ttname"><a href="structcimg__library_1_1_c_img.html#a78a2e382dd71914502e9d69d0764133d">cimg_library::CImg::save_png</a></div><div class="ttdeci">const CImg&lt; T &gt; &amp; save_png(const char *const filename, const unsigned int bytes_per_pixel=0) const</div><div class="ttdoc">Save image as a PNG file.</div><div class="ttdef"><b>Definição</b> <a href="_c_img_8h_source.html#l59347">CImg.h:59347</a></div></div>
+<div class="ttc" id="astructcimg__library_1_1_c_img_html_ab85a8e52d50bec4e92e13a0b60f5ea78"><div class="ttname"><a href="structcimg__library_1_1_c_img.html#ab85a8e52d50bec4e92e13a0b60f5ea78">cimg_library::CImg::draw_point</a></div><div class="ttdeci">CImg&lt; T &gt; &amp; draw_point(const int x0, const int y0, const int z0, const tc *const color, const float opacity=1)</div><div class="ttdoc">Draw a 3D point.</div><div class="ttdef"><b>Definição</b> <a href="_c_img_8h_source.html#l47618">CImg.h:47618</a></div></div>
+<div class="ttc" id="atarefa4_8cpp_html_a39656adfcd416b5977fd29c3ed2f40c4"><div class="ttname"><a href="tarefa4_8cpp.html#a39656adfcd416b5977fd29c3ed2f40c4">ray_color_sphere</a></div><div class="ttdeci">vec3 ray_color_sphere(const Ray &amp;r)</div><div class="ttdoc">Calcula a cor de um pixel na imagem gerada considerando uma esfera.</div><div class="ttdef"><b>Definição</b> <a href="tarefa4_8cpp_source.html#l00084">tarefa4.cpp:84</a></div></div>
+<div class="ttc" id="atarefa4_8cpp_html_a6dc4bf251c7aa261e767c5c64b178692"><div class="ttname"><a href="tarefa4_8cpp.html#a6dc4bf251c7aa261e767c5c64b178692">salvarImagem</a></div><div class="ttdeci">void salvarImagem(const CImg&lt; unsigned char &gt; &amp;imagem, const std::string &amp;nomeArquivo)</div><div class="ttdoc">Salva uma imagem usando a biblioteca CImg.</div><div class="ttdef"><b>Definição</b> <a href="tarefa4_8cpp_source.html#l00074">tarefa4.cpp:74</a></div></div>
+<div class="ttc" id="atarefa4_8cpp_html_a94056ab8ee6aa9c7afffe39a5f279f0d"><div class="ttname"><a href="tarefa4_8cpp.html#a94056ab8ee6aa9c7afffe39a5f279f0d">hit_sphere</a></div><div class="ttdeci">bool hit_sphere(const vec3 &amp;center, double radius, const Ray &amp;r)</div><div class="ttdoc">Verifica se um raio atinge uma esfera no espaço 3D.</div><div class="ttdef"><b>Definição</b> <a href="tarefa4_8cpp_source.html#l00059">tarefa4.cpp:59</a></div></div>
+<div class="ttc" id="atarefa4_8cpp_html_a9833c87e271a39bccee01aef76168177"><div class="ttname"><a href="tarefa4_8cpp.html#a9833c87e271a39bccee01aef76168177">hit_triangle</a></div><div class="ttdeci">bool hit_triangle(const vec3 &amp;v0, const vec3 &amp;v1, const vec3 &amp;v2, const Ray &amp;r)</div><div class="ttdoc">Verifica se um raio atinge um triângulo no espaço 3D.</div><div class="ttdef"><b>Definição</b> <a href="tarefa4_8cpp_source.html#l00024">tarefa4.cpp:24</a></div></div>
+<div class="ttc" id="atarefa4_8cpp_html_a99b255eb2daf1357afc84727972d09dc"><div class="ttname"><a href="tarefa4_8cpp.html#a99b255eb2daf1357afc84727972d09dc">ray_color_triangle</a></div><div class="ttdeci">vec3 ray_color_triangle(const Triangulo &amp;triangulo, const Ray &amp;r, bool *hit_detected)</div><div class="ttdoc">Calcula a cor de um pixel na imagem gerada considerando um triângulo.</div><div class="ttdef"><b>Definição</b> <a href="tarefa4_8cpp_source.html#l00101">tarefa4.cpp:101</a></div></div>
+<div class="ttc" id="atarefa4_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="tarefa4_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdoc">Função principal do programa.</div><div class="ttdef"><b>Definição</b> <a href="tarefa4_8cpp_source.html#l00129">tarefa4.cpp:129</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
